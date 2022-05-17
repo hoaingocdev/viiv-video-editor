@@ -174,7 +174,24 @@ class _MainViewState extends TTState<_MainModel, _MainView> {
                         ],
                       ),
                       const SizedBox(width: 47),
-                      Image.asset(Id.ic_music2),
+                      PopupMenuButton(
+                        child: Image.asset(Id.ic_music2),
+                        itemBuilder: (context) => [
+                          PopupMenuItem(
+                            onTap: () => model.onMusicPressed(context),
+                            child: Row(
+                              children: [
+                                Image.asset(Id.ic_bgm),
+                                const SizedBox(width: 14),
+                                const Text(
+                                  'BGM',
+                                  style: St.textStyle7,
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ],
                   )
                 ],

@@ -38,4 +38,11 @@ class _MainModel extends TTChangeNotifier<_MainView> {
       builder: (_) => createTitle(),
     );
   }
+
+  void onMusicPressed(BuildContext context) {
+    showBottomSheet(
+      context: context,
+      builder: (_) => createMusic(),
+    );
+  }
 }

@@ -48,4 +48,22 @@ class St {
     fontFamily: Font.openSans,
     fontSize: 12.0,
   );
+  static const textStyle8 = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.w600,
+    fontFamily: Font.openSans,
+    fontSize: 13.0,
+  );
+  static const textStyle9 = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.w400,
+    fontFamily: Font.openSans,
+    fontSize: 10.0,
+  );
+  static const textStyle10 = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+    fontFamily: Font.openSans,
+    fontSize: 12.0,
+  );
 }

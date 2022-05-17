@@ -36,7 +36,7 @@ class _StickerItemWidgetState extends State<StickerItemWidget> {
                   color: widget.isSeleted ? Cl.darkishPink : Cl.veryLightPink,
                 ),
               ),
-              padding: widget.hasTitle ? EdgeInsets.all(16) : EdgeInsets.zero,
+              padding: widget.hasTitle ? const EdgeInsets.all(16) : EdgeInsets.zero,
               child: Image.network(
                 'https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg',
                 fit: BoxFit.contain,

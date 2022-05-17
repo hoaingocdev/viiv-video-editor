@@ -5,6 +5,7 @@
 class Id {
   Id._();
 
+  static const String ic_bgm = 'assets/images/ic_BGM.png';
   static const String ic_cancer = 'assets/images/ic_cancer.png';
   static const String ic_cc = 'assets/images/ic_cc.png';
   static const String ic_clock = 'assets/images/ic_clock.png';
