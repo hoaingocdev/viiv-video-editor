@@ -17,10 +17,10 @@ class StickerContent extends StatelessWidget {
             separatorBuilder: (_, __) => const SizedBox(width: 5),
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
-            itemCount: 10,
+            itemCount: model.hashtags.length,
             itemBuilder: (_, i) {
-              return HashtagItemWidget(
-                name: '신나는',
+              return HashtagWidget(
+                hashtagInfo: model.hashtags[i],
                 onPressed: () => model.onHashtagPressed(i),
                 isSelected: i == model.hashtagIndex,
               );

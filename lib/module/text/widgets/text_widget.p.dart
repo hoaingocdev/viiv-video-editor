@@ -1,11 +1,11 @@
-part of title;
+part of text;
 
-class StickerWidget extends StatefulWidget {
+class TextWidget extends StatefulWidget {
   final bool isSelected;
   final VoidCallback? onPressed;
   final TitleInfo titleInfo;
 
-  const StickerWidget({
+  const TextWidget({
     Key? key,
     this.isSelected = false,
     this.onPressed,
@@ -13,10 +13,10 @@ class StickerWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<StickerWidget> createState() => _StickerWidgetState();
+  State<TextWidget> createState() => _TextWidgetState();
 }
 
-class _StickerWidgetState extends State<StickerWidget> {
+class _TextWidgetState extends State<TextWidget> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -32,9 +32,8 @@ class _StickerWidgetState extends State<StickerWidget> {
               color: widget.isSelected ? Cl.darkishPink : Cl.veryLightPink,
             ),
           ),
-          padding: EdgeInsets.all(16),
           child: Image.network(
-            'https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg',
+            widget.titleInfo.imageUrl,
             fit: BoxFit.contain,
           ),
         ),

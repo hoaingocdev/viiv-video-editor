@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:viiv/res/color.p.dart';
 
 class CContainerWidget extends StatefulWidget {
   final Color color;

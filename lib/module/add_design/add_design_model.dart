@@ -2,6 +2,7 @@ part of add_design;
 
 class _AddDesignModel extends TTChangeNotifier<_AddDesignView> {
   final stickers = <DesignInfo>[];
+  final hashtags = <HashtagInfo>[];
   int stickerIndex = -1;
   int hashtagIndex = -1;
   int transitionIndex = 0;
@@ -54,6 +55,13 @@ class _AddDesignModel extends TTChangeNotifier<_AddDesignView> {
             'https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg',
       });
     });
+
+    final hashtagList = List.generate(20, (index) {
+      return HashtagInfo.from({
+        'name': 'hashtag $index',
+      });
+    });
+    hashtags.addAll(hashtagList);
     stickers.addAll(ls);
   }
 }

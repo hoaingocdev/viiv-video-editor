@@ -1,11 +1,27 @@
-part of title;
+part of text;
 
 class TitleContent extends StatelessWidget {
-  const TitleContent({Key? key}) : super(key: key);
+  final List<TitleInfo> list;
+  final List<HashtagInfo> hashtags;
+  final int selectedIndex;
+  final int selectedHashtagIndex;
+
+  final ValueChanged<int>? onHashtagPressed;
+  final ValueChanged<int>? onItemPressed;
+
+  const TitleContent({
+    Key? key,
+    required this.list,
+    required this.selectedIndex,
+    required this.hashtags,
+    required this.selectedHashtagIndex,
+    this.onItemPressed,
+    this.onHashtagPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<_TitleModel>();
+    final model = context.watch<_TextModel>();
 
     return Column(
       children: [
@@ -17,12 +33,12 @@ class TitleContent extends StatelessWidget {
             separatorBuilder: (_, __) => const SizedBox(width: 5),
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
-            itemCount: 10,
+            itemCount: hashtags.length,
             itemBuilder: (_, i) {
-              return HashtagItemWidget(
-                name: '신나는',
-                onPressed: () => model.onHashtagPressed(i),
-                isSelected: i == model.hashtagIndex,
+              return HashtagWidget(
+                hashtagInfo: hashtags[i],
+                onPressed: () => onHashtagPressed?.call(i),
+                isSelected: i == selectedHashtagIndex,
               );
             },
           ),
@@ -38,12 +54,12 @@ class TitleContent extends StatelessWidget {
               childAspectRatio: 109 / 50,
             ),
             padding: const EdgeInsets.all(15),
-            itemCount: model.importTitle.length,
+            itemCount: list.length,
             itemBuilder: (_, i) {
-              return StickerWidget(
-                titleInfo: model.importTitle[i],
-                onPressed: () => model.onTitlePressed(i),
-                isSelected: i == model.titleIndex,
+              return TextWidget(
+                titleInfo: list[i],
+                onPressed: () => onItemPressed?.call(i),
+                isSelected: i == selectedIndex,
               );
             },
           ),

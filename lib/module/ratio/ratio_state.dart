@@ -4,7 +4,7 @@ class _RatioViewState extends TTState<_RatioModel, _RatioView> {
   @override
   Widget buildWithModel(BuildContext context, _RatioModel model) {
     return SizedBox(
-      child: Container(
+      child: SizedBox(
         height: MediaQueryData.fromWindow(window).padding.bottom + 160,
         child: Column(
           children: [

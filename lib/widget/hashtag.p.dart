@@ -1,14 +1,17 @@
-part of add_design;
+import 'package:flutter/material.dart';
 
-class HashtagItemWidget extends StatelessWidget {
-  final String name;
+import '../model/model.dart';
+import '../res/res.dart';
+
+class HashtagWidget extends StatelessWidget {
   final bool isSelected;
   final VoidCallback? onPressed;
-  const HashtagItemWidget({
+  final HashtagInfo hashtagInfo;
+  const HashtagWidget({
     Key? key,
-    required this.name,
     this.isSelected = false,
     this.onPressed,
+    required this.hashtagInfo,
   }) : super(key: key);
 
   @override
@@ -25,11 +28,9 @@ class HashtagItemWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(13),
               border: Border.all(
                 color: isSelected ? Cl.darkishPink : Cl.veryLightPink,
-              )
-              // color: Cl.black,
-              ),
+              )),
           child: Center(
-            child: Text('#$name'),
+            child: Text(hashtagInfo.name),
           ),
         ),
       ),
