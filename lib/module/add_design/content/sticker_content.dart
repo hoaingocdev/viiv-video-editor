@@ -34,8 +34,7 @@ class StickerContent extends StatelessWidget {
               crossAxisCount: 4,
               mainAxisSpacing: 7,
               crossAxisSpacing: 7,
-
-              // childAspectRatio: 81 / 96,
+              // childAspectRatio: 109 / 50,
             ),
             itemCount: model.stickers.length,
             itemBuilder: (_, i) {

@@ -6,6 +6,7 @@ class Id {
   Id._();
 
   static const String ic_cancer = 'assets/images/ic_cancer.png';
+  static const String ic_cc = 'assets/images/ic_cc.png';
   static const String ic_clock = 'assets/images/ic_clock.png';
   static const String ic_close = 'assets/images/ic_close.png';
   static const String ic_img = 'assets/images/ic_img.png';

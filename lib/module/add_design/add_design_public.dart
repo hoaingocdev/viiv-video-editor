@@ -13,7 +13,7 @@ part 'add_design_model.dart';
 part 'add_design_state.dart';
 part 'widgets/hashtag_item.p.dart';
 part 'content/sticker_content.dart';
-part 'content/Transition_content.dart';
+part 'content/transition_content.dart';
 part 'widgets/sticker_item.p.dart';
 
 ChangeNotifierProvider<_AddDesignModel> createAddDesign() {

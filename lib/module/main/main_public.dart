@@ -9,6 +9,7 @@ import 'package:viiv/res/res.dart';
 import 'package:viiv/widget/widget.dart';
 
 import '../change_media/change_media_public.dart';
+import '../module.dart';
 
 part 'main_view.dart';
 part 'main_model.dart';

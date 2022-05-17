@@ -35,11 +35,14 @@ class _ChangeMediaViewState extends TTState<_ChangeMediaModel, _ChangeMediaView>
                   children: const [
                     TabBar(
                       indicatorColor: Cl.darkishPink,
+                      labelStyle: St.textStyle4,
                       tabs: [
                         Tab(
                           text: 'Viiv gallery',
                         ),
-                        Tab(text: 'Import'),
+                        Tab(
+                          text: 'Import',
+                        ),
                       ],
                       labelColor: Cl.black,
                     ),

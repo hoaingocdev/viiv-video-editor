@@ -24,4 +24,18 @@ class _MainModel extends TTChangeNotifier<_MainView> {
       builder: (_) => createAddDesign(),
     );
   }
+
+  void onRadio(BuildContext context) {
+    showBottomSheet(
+      context: context,
+      builder: (_) => createRadio(),
+    );
+  }
+
+  void onTitlePressed(BuildContext context) {
+    showBottomSheet(
+      context: context,
+      builder: (_) => createTitle(),
+    );
+  }
 }

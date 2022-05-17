@@ -113,7 +113,10 @@ class _MainViewState extends TTState<_MainModel, _MainView> {
                               children: [
                                 Image.asset(Id.ic_img),
                                 const SizedBox(width: 14),
-                                const Text('Change media'),
+                                const Text(
+                                  'Change media',
+                                  style: St.textStyle7,
+                                ),
                               ],
                             ),
                           ),
@@ -123,23 +126,53 @@ class _MainViewState extends TTState<_MainModel, _MainView> {
                               children: [
                                 Image.asset(Id.ic_smile),
                                 const SizedBox(width: 14),
-                                const Text('Add design'),
+                                const Text('Add design', style: St.textStyle7),
                               ],
                             ),
                           ),
                           PopupMenuItem(
+                            onTap: () => model.onRadio(context),
                             child: Row(
                               children: [
                                 Image.asset(Id.ic_tv),
                                 const SizedBox(width: 14),
-                                const Text('Ratio '),
+                                const Text('Ratio', style: St.textStyle7),
                               ],
                             ),
                           )
                         ],
                       ),
                       const SizedBox(width: 47),
-                      Image.asset(Id.ic_time),
+                      PopupMenuButton(
+                        child: Image.asset(Id.ic_time),
+                        itemBuilder: (context) => [
+                          PopupMenuItem(
+                            onTap: () => model.onTitlePressed(context),
+                            child: Row(
+                              children: [
+                                Image.asset(Id.ic_time),
+                                const SizedBox(width: 14),
+                                const Text(
+                                  'Title',
+                                  style: St.textStyle7,
+                                ),
+                              ],
+                            ),
+                          ),
+                          PopupMenuItem(
+                            child: Row(
+                              children: [
+                                Image.asset(Id.ic_cc),
+                                const SizedBox(width: 14),
+                                const Text(
+                                  'Subtitle',
+                                  style: St.textStyle7,
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                       const SizedBox(width: 47),
                       Image.asset(Id.ic_music2),
                     ],

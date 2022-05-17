@@ -14,6 +14,7 @@ class _AddDesignViewState extends TTState<_AddDesignModel, _AddDesignView> {
           child: Column(
             children: const [
               TabBar(
+                labelStyle: St.textStyle4,
                 indicatorColor: Cl.darkishPink,
                 tabs: [
                   Tab(

@@ -18,7 +18,10 @@ class _GalleryContentState extends State<GalleryContent> {
           padding: const EdgeInsets.only(left: 15, top: 12),
           child: Row(
             children: [
-              const Text('Gallery'),
+              const Text(
+                'Gallery',
+                style: St.textStyle6,
+              ),
               const SizedBox(width: 11),
               PopupMenuButton(
                 child: SizedBox(
