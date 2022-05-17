@@ -28,7 +28,7 @@ class _MainModel extends TTChangeNotifier<_MainView> {
   void onRadio(BuildContext context) {
     showBottomSheet(
       context: context,
-      builder: (_) => createRadio(),
+      builder: (_) => createRatio(),
     );
   }
 

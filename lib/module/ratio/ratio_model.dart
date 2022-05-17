@@ -1,8 +1,8 @@
-part of radio;
+part of ratio;
 
 enum AspectRatioEnum { portrait, square, landscape, unknow }
 
-class _RatioModel extends TTChangeNotifier<_RadioView> {
+class _RatioModel extends TTChangeNotifier<_RatioView> {
   AspectRatioEnum aspectRatioIndex = AspectRatioEnum.unknow;
   bool get isSelected => aspectRatioIndex != AspectRatioEnum.unknow;
 

@@ -1,6 +1,6 @@
-part of radio;
+part of ratio;
 
-class _RadioViewState extends TTState<_RatioModel, _RadioView> {
+class _RatioViewState extends TTState<_RatioModel, _RatioView> {
   @override
   Widget buildWithModel(BuildContext context, _RatioModel model) {
     return SizedBox(
