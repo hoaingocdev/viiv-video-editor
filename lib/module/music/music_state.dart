@@ -44,10 +44,13 @@ class _MusicViewState extends TTState<_MusicModel, _MusicView> {
                     list: model.recommends,
                   ),
                   allContent,
-                  MusicImportContent(),
+                  MusicImportContent(
+                    importIndex: model.importIndex,
+                    onLongPressed: model.onImportLongPressed,
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

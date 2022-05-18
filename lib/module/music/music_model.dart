@@ -2,9 +2,11 @@ part of music;
 
 class _MusicModel extends TTChangeNotifier<_MusicView> {
   final recommends = <MusicInfo>[];
-  final musicImports = <ImportMucsicInfo>[];
+  final musicImports = <MusicInfo>[];
   final categories = <MusicCateroryInfo>[];
   int categoryIndex = -1;
+  int importIndex = -1;
+
   bool get isCategorySelected => categoryIndex != -1;
   _MusicModel() {
     _initData();
@@ -12,6 +14,13 @@ class _MusicModel extends TTChangeNotifier<_MusicView> {
   void onCategoryPressed(int index) {
     if (categoryIndex != index) {
       categoryIndex = index;
+      notifyListeners();
+    }
+  }
+
+  void onImportLongPressed(int index) {
+    if (importIndex != index) {
+      importIndex = index;
       notifyListeners();
     }
   }
@@ -33,13 +42,38 @@ class _MusicModel extends TTChangeNotifier<_MusicView> {
       });
     });
     categories.addAll(lsAll);
-    final lsMusicImport = List.generate(100, (index) {
-      return ImportMucsicInfo.from({
+    final lsMusicImport = List.generate(3, (index) {
+      return MusicInfo.from({
         'name': 'recommaned$index',
         'artis': 'artis$index',
         'imageUrl': 'https://img.lovepik.com/photo/45001/5091.jpg_wh300.jpg'
       });
     });
     musicImports.addAll(lsMusicImport);
+  }
+
+  void onDeletePressed(int index) {
+    musicImports.removeAt(index);
+    importIndex = -1;
+    notifyListeners();
+  }
+
+  void onUploadPressed() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['mp3', 'm4a', 'aac', 'wav'],
+    );
+
+    if (result != null) {
+      File file = File(result.files.single.path ?? '');
+      print(file);
+      musicImports.add(MusicInfo.from({
+        'name': result.files.single.name,
+        'artis': '-',
+      }));
+      notifyListeners();
+    } else {
+      // User canceled the picker
+    }
   }
 }
