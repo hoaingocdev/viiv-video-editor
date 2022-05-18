@@ -6,6 +6,8 @@ class _MusicViewState extends TTState<_MusicModel, _MusicView> {
     Widget allContent;
     if (model.isCategorySelected) {
       allContent = RecommentContent(
+        playIndex: model.allPlayIndex,
+        onPlayPressed: model.onAllPlayPressed,
         list: model.categories[model.categoryIndex].musics,
       );
     } else {
@@ -41,7 +43,9 @@ class _MusicViewState extends TTState<_MusicModel, _MusicView> {
               child: TabBarView(
                 children: [
                   RecommentContent(
+                    playIndex: model.recommendPlayIndex,
                     list: model.recommends,
+                    onPlayPressed: model.onRecommanedPlayPressed,
                   ),
                   allContent,
                   MusicImportContent(

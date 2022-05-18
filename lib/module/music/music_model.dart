@@ -4,8 +4,11 @@ class _MusicModel extends TTChangeNotifier<_MusicView> {
   final recommends = <MusicInfo>[];
   final musicImports = <MusicInfo>[];
   final categories = <MusicCateroryInfo>[];
+
   int categoryIndex = -1;
   int importIndex = -1;
+  int recommendPlayIndex = -1;
+  int allPlayIndex = -1;
 
   bool get isCategorySelected => categoryIndex != -1;
   _MusicModel() {
@@ -18,11 +21,29 @@ class _MusicModel extends TTChangeNotifier<_MusicView> {
     }
   }
 
+  void onRecommanedPlayPressed(int index) {
+    if (recommendPlayIndex != index) {
+      recommendPlayIndex = index;
+    } else {
+      recommendPlayIndex = -1;
+    }
+    notifyListeners();
+  }
+
   void onImportLongPressed(int index) {
     if (importIndex != index) {
       importIndex = index;
       notifyListeners();
     }
+  }
+
+  void onAllPlayPressed(int index) {
+    if (allPlayIndex != index) {
+      allPlayIndex = index;
+    } else {
+      allPlayIndex = -1;
+    }
+    notifyListeners();
   }
 
   void _initData() {
